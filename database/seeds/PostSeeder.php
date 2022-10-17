@@ -16,8 +16,8 @@ public function run()
 {
         DB::table('posts')->insert([
                 'id' =>1,
-                'title' => '',
-                'body' => '',
+                'title' => 'sightseeing',
+                'body' => '内容',
                 'user_id' => 1,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),

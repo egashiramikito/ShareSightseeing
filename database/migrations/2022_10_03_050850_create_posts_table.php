@@ -18,7 +18,11 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->string('title',100);
             $table->text('body');
-            $table->softDeletes(); 
+            $table->softDeletes();
+            $table->integer('user_id')->unsigned();
+            $table->integer('prefecture_id')->unsigned();
+            $table->integer('area_id')->unsigned(); 
+    
         });
     }
 

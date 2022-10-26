@@ -1,0 +1,28 @@
++--------+----------+------------------------+------------------+------------------------------------------------------------------------+----------------+
+| Domain | Method   | URI                    | Name             | Action                                                                 | Middleware     |
++--------+----------+------------------------+------------------+------------------------------------------------------------------------+----------------+
+|        | GET|HEAD | /                      |                  | App\Http\Controllers\PostController@index                              | web,auth       |
+|        | GET|HEAD | api/user               |                  | Closure                                                                | api,auth:api   |
+|        | GET|HEAD | area                   |                  | App\Http\Controllers\AreaController@area                               | web,auth       |
+|        | GET|HEAD | area/{area}            |                  | App\Http\Controllers\AreaController@show                               | web,auth       |
+|        | GET|HEAD | home                   |                  | App\Http\Controllers\PostController@index                              | web,auth       |
+|        | GET|HEAD | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,auth,guest |
+|        | POST     | login                  |                  | App\Http\Controllers\Auth\LoginController@login                        | web,auth,guest |
+|        | POST     | logout                 | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web,auth       |
+|        | GET|HEAD | password/confirm       | password.confirm | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web,auth       |
+|        | POST     | password/confirm       |                  | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth       |
+|        | POST     | password/email         | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,auth       |
+|        | GET|HEAD | password/reset         | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,auth       |
+|        | POST     | password/reset         | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,auth       |
+|        | GET|HEAD | password/reset/{token} | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,auth       |
+|        | GET|HEAD | posts                  |                  | App\Http\Controllers\PostController@index                              | web,auth       |
+|        | POST     | posts                  |                  | App\Http\Controllers\PostController@store                              | web,auth       |
+|        | GET|HEAD | posts/create           |                  | App\Http\Controllers\PostController@create                             | web,auth       |
+|        | PUT      | posts/{post}           |                  | App\Http\Controllers\PostController@update                             | web,auth       |
+|        | DELETE   | posts/{post}           |                  | App\Http\Controllers\PostController@delete                             | web,auth       |
+|        | GET|HEAD | posts/{post}           |                  | App\Http\Controllers\PostController@show                               | web,auth       |
+|        | GET|HEAD | posts/{post}/edit      |                  | App\Http\Controllers\PostController@edit                               | web,auth       |
+|        | GET|HEAD | register               | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,auth,guest |
+|        | POST     | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web,auth,guest |
+|        | GET|HEAD | select                 |                  | App\Http\Controllers\SelectController@select                           | web,auth       |
++--------+----------+------------------------+------------------+------------------------------------------------------------------------+----------------+

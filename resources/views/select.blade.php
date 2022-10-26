@@ -9,7 +9,7 @@
     </head>
          <body>
             <p1>
-                <a href='/posts'>投稿する</a>
+                <a href='/area'>投稿する</a>
             </p1>    
             <p2>
                 <a heaf='/view.blade.php'>閲覧する</a>

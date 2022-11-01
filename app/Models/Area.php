@@ -22,6 +22,10 @@ class Area extends Model
     return $this->hasMany('App\Prefecture');  
 }
 
+ public function posts()   
+{
+    return $this->hasMany('App\Post');  
+}
 
 
 }

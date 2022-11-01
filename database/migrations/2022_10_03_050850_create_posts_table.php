@@ -20,8 +20,8 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->softDeletes();
             $table->integer('user_id')->nullable();
-            $table->integer('prefecture_id')->unsigned();
-            $table->integer('area_id')->unsigned(); 
+            $table->integer('prefecture_id')->nullable();
+            $table->integer('area_id')->nullable(); 
     
         });
     }

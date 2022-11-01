@@ -12,8 +12,9 @@
                 <div class="content">
                         <div class="content__post">
                             @foreach($prefectures as $prefecture)
-                            <p>{{$prefecture->name}}</p>
+                            <a href = "/area/{{ $area->id }}/{{ $prefecture->id }}">{{$prefecture->name}}</a> 
                             @endforeach
+                         
                         </div>
                 </div>
                     <div class="footer">

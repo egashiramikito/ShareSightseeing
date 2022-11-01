@@ -13,9 +13,23 @@ class Post extends Model
     protected $fillable = [
     'title',
     'body',
-    'user_id'
+    'user_id',
+    'area_id',
+    'prefecture_id'
 ];
-    
+ 
+ 
+  public function area()
+{
+    return $this->belongsTo('App\Area');
+}
+  
+  
+    public function prefecture()
+{
+    return $this->belongsTo('App\Prefecture');
+}
+   
     //可変項目
     
 }

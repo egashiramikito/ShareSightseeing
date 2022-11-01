@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Area;
+use App\Models\Prefecture;
 
 class PostController extends Controller
 {
@@ -14,9 +16,11 @@ class PostController extends Controller
     }
     
     
-    public function create()
+    public function create(Area $area,Prefecture $prefecture)
     {
-        return view('posts/create');
+        $area_id=$area->id;
+        $prefecture_id=$prefecture->id;
+        return view('posts/create')->with(['area_id' => $area_id,'prefecture_id' => $prefecture_id]);
     }
     
     
@@ -30,8 +34,11 @@ class PostController extends Controller
     {
  
     $input = $request['post'];
+    $input['user_id'] = Auth::id();
+    $input['area_id'] = (int)$input['area_id'];
+    $input['prefecture_id'] = (int)$input['prefecture_id'];
     $post->fill($input)->save();
-    return redirect('/posts/' . $post->id);
+    return view('/select');
     }
     
     

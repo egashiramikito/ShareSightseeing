@@ -49,7 +49,7 @@ class PostController extends Controller
     $post_id=DB::table('posts')->latest('id')->first();
     $image['post_id'] = $post_id->id;
     $photo->fill($image)->save();
-    $image = Image::make($filePath);
+ 
    
     return view('/select');
    

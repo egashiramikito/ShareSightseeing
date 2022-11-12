@@ -19,12 +19,12 @@ class Area extends Model
     //可変項目
  public function prefectures()   
 {
-    return $this->hasMany('App\Prefecture');  
+    return $this->hasMany('App\Models\Prefecture');  
 }
 
  public function posts()   
 {
-    return $this->hasMany('App\Post');  
+    return $this->hasMany('App\Models\Post');  
 }
 
 

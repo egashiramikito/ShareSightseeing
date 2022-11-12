@@ -13,13 +13,16 @@ class CreatePhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('photos', function (Blueprint $table) {
+        if (!Schema::hasTable('photos')) {
+            Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('post_id')->unsigned();
             $table->string('image');
+            $table->timestamps();
+            
     });
     }
-
+    }
     /**
      * Reverse the migrations.
      *
@@ -27,6 +30,6 @@ class CreatePhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phtps');
+        Schema::dropIfExists('photos');
     }
 };

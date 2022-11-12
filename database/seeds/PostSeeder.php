@@ -9,23 +9,22 @@ class PostSeeder extends Seeder
      *
      * @return void
      */
-// DB::table('テーブル名')->insert(['カラム名'] => 'データ' );
-// Modelなどのuse宣言を忘れずに
-
-public function run()
-{
-        DB::table('posts')->insert([
-                'id' =>1,
-                'title' => 'sightseeing',
-                'body' => '内容',
-                'user_id' => 1,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-                'deleted_at' => new DateTime(),
-                'prefecture_id' =>1,
-                'area_id' =>1,
+    public function run()
+    {
+        // //
+        // DB::table('posts')->insert([
+        //         'id' =>,
+        //         'title'=>,
+        //         'body' => ,
+        //         'user_id' => ,
+        //         'created_at' => new DateTime(),
+        //         'updated_at' => new DateTime(),
+        //         'deleted_at' => new DateTime(),
+        //         'area_id' =>
+        //         'prefecture_id'
+        //         'photo_id'
                 
-         ]);
-}
-
+        //      ]);
+                
+    }
 }

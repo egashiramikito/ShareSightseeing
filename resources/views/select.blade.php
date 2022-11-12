@@ -2,10 +2,10 @@
 @section('content')
  　　
 
-    <p1>
+    <p>
         <a href='/area'>投稿する</a>
-    </p1>    
-    <p2>
-        <a heaf='/viewarea'>閲覧する</a>
-    </p2>
+    </p>    
+    <p>
+        <a href='/viewarea'>閲覧する</a>
+    </p>
 @endsection       

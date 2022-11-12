@@ -7,11 +7,14 @@
     </head>
          <body>
          <h1>エリアを選ぶ</h1>
-        <div class='viewareas'>
+            <div class='areas'>
             <div class='area'>
                 @foreach($areas as $area)
                 <a href ="/viewarea/{{ $area->id }}">{{$area->name}}</a>
                 @endforeach
                
             </div>
-        </div>
+            </div>  
+                 <div class="footer">
+        <a href="/">戻る</a>
+    </div>

@@ -11,8 +11,9 @@
 |
 */
 Route::get('/','SelectController@select');
-Route::get('/viewarea','Viewcontroller@viewarea');
-
+Route::get('/viewarea','ViewController@viewarea');
+Route::get('/viewarea/{area}','ViewController@show');
+Route::get('/viewarea/{area}/{prefecture}', 'ViewController@view');
 
 //select画面を表示
 Route::group(['middleware' => ['auth']], function(){
@@ -31,5 +32,7 @@ Route::get('/area/{area}', 'AreaController@show');
 Route::get('/area/{area}/{prefecture}', 'PostController@create');
 });
 
+Route::get('/cloudinary', 'CloudinaryController@cloudinary');  //投稿フォームの表示
+Route::post('/cloudinary', 'CloudinaryController@cloudinary_store');  //画像保存処理
 
 Auth::routes();

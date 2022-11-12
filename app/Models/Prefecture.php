@@ -10,13 +10,13 @@ class Prefecture extends Model
     
   public function area()
 {
-    return $this->belongsTo('App\Area');
+    return $this->belongsTo('App\Models\Area');
 }
   
   
  public function Posts()
 {
-    return $this->hasMany('App\Post');
+    return $this->hasMany('App\Models\Post');
 }
     
   

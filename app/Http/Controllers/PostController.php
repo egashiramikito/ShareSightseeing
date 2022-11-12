@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Area;
 use App\Models\Prefecture;
+use Cloudinary;
+use App\Models\Photo;
+use Illuminate\Support\Facades\DB;
+use InterventionImage;
+
 
 class PostController extends Controller
 {
@@ -30,7 +35,7 @@ class PostController extends Controller
     }
     
     
-    public function store(Request $request, Post $post)
+    public function store(Request $request, Post $post, Photo $photo)
     {
  
     $input = $request['post'];
@@ -38,7 +43,16 @@ class PostController extends Controller
     $input['area_id'] = (int)$input['area_id'];
     $input['prefecture_id'] = (int)$input['prefecture_id'];
     $post->fill($input)->save();
+    
+    $image['image']= Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+    
+    $post_id=DB::table('posts')->latest('id')->first();
+    $image['post_id'] = $post_id->id;
+    $photo->fill($image)->save();
+    $image = Image::make($filePath);
+   
     return view('/select');
+   
     }
     
     
@@ -71,6 +85,8 @@ class PostController extends Controller
     return view('posts/show')->with(['post' => $post]);
     }
     
+    
+    
+    
+
 }
-
-

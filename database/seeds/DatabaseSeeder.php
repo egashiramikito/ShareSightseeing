@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
                 Post_userSeeder::class,
                 AreaSeeder::class,
                 PrefectureSeeder::class,
-                PhotoSeeder::class,
+                //PhotoSeeder::class,
         ]);
     
     }
